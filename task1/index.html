@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+ <html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="style.css">
+<title>Signal Viewer </title>
+</head>
+<body>
+<nav>
+    <h2>
+      Multi Channel Signal Viewer
+    </h2>
+</nav>
+
+<div id="myDiv0" class="divs" style="width:600px;height:250px;"></div>
+<input type="file" name="" id="inputfile" onchange="readCSVFile(`inputfile`,0)">
+<button onclick="stopGraphing(0)">stop</button>
+<button onclick="Link(this.id)" id="linked">Link off</button>
+
+<button onclick="continueGraphing(0)">cont</button>
+<input type="color" class="col" onchange="changecolor(0)">
+<input type="range" name="" class="speed" min="4" max="40" >
+<button onclick="Show_Hide(0)">S/H signal</button>
+<button onclick="Rewind(0)">Rewind signal</button>
+<input type="text" class="Title" placeholder="add Title" onchange="ChangeTitle(0)">
+<input type="text" class="XAxis" placeholder="add X AXIS" onchange="ChangeXaXIS(0)">
+<input type="text" class="YAxis" placeholder="add y AXIS" onchange="ChangeYaXIS(0)">
+<button onclick="Scroll_NF(0)">Scroll</button>
+<div id="flex1">
+  <table id="table0">
+    <tr>
+      <td>
+        Currant mean 0 :
+      </td>
+      <td id="mean0">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Currant max 0 :
+      </td>
+      <td id="max0">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Currant min 0 :
+      </td>
+      <td id="min0">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Currant STD 0 :
+      </td>
+      <td id="STD0">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Currant Duration 0 :
+      </td>
+      <td id="der0">
+      </td>
+    </tr>
+  </table>
+</div>
+<img id="jpg-export" style="display: block;"></img>
+<button onclick="generatePDF()">Generate PDF</button>
+<div id="myDiv1"class="divs" style="width:600px;height:250px;"></div>
+<input type="file" name="" id="inputfile2" onchange="readCSVFile(`inputfile2`,1)">
+<button onclick="stopGraphing(1)">stop</button>
+<button onclick="continueGraphing(1)">cont</button>
+<input type="color" class="col" onchange="changecolor(1)">
+<input type="range" name="" class="speed" min="4" max="40" >
+<button onclick="Show_Hide(1)">S/H signal</button>
+<button onclick="Rewind(1)">Rewind signal</button>
+<input type="text" class="Title"placeholder="add Title" onchange="ChangeTitle(1)">
+<input type="text" class="XAxis" placeholder="add X AXIS" onchange="ChangeXaXIS(1)">
+<input type="text" class="YAxis" placeholder="add  y AXIS" onchange="ChangeYaXIS(1)">
+<button onclick="Scroll_NF(1)">Scroll</button>
+
+<div id="flex2">
+<table id="table1">
+  <tr>
+    <td>
+      Currant mean 1 :
+    </td>
+    <td id="mean1">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Currant max 1 :
+    </td>
+    <td id="max1">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Currant min 1 :
+    </td>
+    <td id="min1">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Currant STD 1 :
+    </td>
+    <td id="STD1">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Currant Duration 1 :
+    </td>
+    <td id="der1">
+    </td>
+  </tr>
+</table>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+<script src="assets/js/jspdf-autotable-custom.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+<script src='https://unpkg.com/simple-statistics@7.8.2/dist/simple-statistics.min.js'>
+</script><script src="app.js"></script>
+ 
+</body>
+</html>  
